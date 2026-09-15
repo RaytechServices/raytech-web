@@ -95,20 +95,23 @@ export async function postToGoogleForm(
   if (!formIsConfigured()) {
     return { ok: false, reason: "Form not configured yet" };
   }
-  const body = new URLSearchParams();
-  (Object.keys(ENTRY_IDS) as FormFieldKey[]).forEach((key) => {
-    const entry = ENTRY_IDS[key];
-    if (!entry) return;
-    body.append(entry, payload[key] ?? "");
-  });
   try {
-    // no-cors: Google Forms does not return CORS headers; request still lands
-    await fetch(FORM_ACTION_URL, {
+    // Server route POSTs to Google (browser cannot read Form CORS).
+    const res = await fetch("/api/quiz/submit", {
       method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     });
+    const data = (await res.json().catch(() => ({}))) as {
+      ok?: boolean;
+      reason?: string;
+    };
+    if (!res.ok || !data.ok) {
+      return {
+        ok: false,
+        reason: data.reason || `HTTP ${res.status}`,
+      };
+    }
     return { ok: true };
   } catch (e) {
     return { ok: false, reason: String(e) };
