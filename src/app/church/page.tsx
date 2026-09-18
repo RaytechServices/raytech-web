@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const btnBase = {
   display: "block",
-  textAlign: "center",
+  textAlign: "center" as const,
   textDecoration: "none",
   fontWeight: 700,
   padding: "0.95rem 1rem",
@@ -77,6 +77,85 @@ export default function ChurchJournalPage() {
         >
           Get church tech out of your head — from scattered notes to one written place.
         </p>
+
+        <section
+          style={{
+            background: "#fff",
+            borderRadius: 12,
+            padding: "1.25rem 1.25rem 1.35rem",
+            margin: "0 0 1.5rem",
+            border: "1px solid #d9d2c3",
+          }}
+        >
+          <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start", marginBottom: "1rem" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/adam-casual.jpg"
+              alt="Adam Raymer-Brown"
+              width={72}
+              height={72}
+              style={{
+                width: 72,
+                height: 72,
+                borderRadius: "999px",
+                objectFit: "cover",
+                flexShrink: 0,
+                border: "2px solid #e8e2d4",
+              }}
+            />
+            <div>
+              <h2
+                style={{
+                  fontFamily: "Fraunces, Georgia, serif",
+                  fontSize: "1.25rem",
+                  margin: "0 0 0.35rem",
+                  fontWeight: 700,
+                }}
+              >
+                Hi. Read this first.
+              </h2>
+              <p style={{ margin: 0, fontSize: "0.92rem", color: "rgba(28,25,21,0.62)" }}>
+                Adam Raymer-Brown · Raytech Services
+              </p>
+            </div>
+          </div>
+          <p style={{ marginBottom: "0.75rem" }}>
+            Hi, my name is Adam. I&apos;ve spent 20 years in IT, and a lot of that time has been helping churches get
+            organized.
+          </p>
+          <p style={{ marginBottom: "0.75rem" }}>
+            Every time I start work at a new church, I ask the same questions. Where&apos;s the internet box? Who has
+            the passwords? Who pays for the website? Most of the time the answers live in one person&apos;s head, and
+            that person is tired of carrying it all.
+          </p>
+          <p style={{ marginBottom: "0.75rem" }}>
+            So I made the journal I wish every one of my clients had filled out before I walked in the door. I hope you
+            find it useful and easy to understand.
+          </p>
+          <p style={{ fontWeight: 700, marginBottom: "0.45rem" }}>Here&apos;s the deal I&apos;m making with you:</p>
+          <ul style={{ margin: "0 0 0.85rem 1.1rem" }}>
+            <li style={{ margin: "0.35rem 0" }}>
+              You will <strong>not</strong> fix anything in this book. You&apos;re only writing down what&apos;s already
+              there.
+            </li>
+            <li style={{ margin: "0.35rem 0" }}>
+              You do <strong>not</strong> need to be &quot;a computer person.&quot; If you can fill out a permission
+              slip, you can do this.
+            </li>
+            <li style={{ margin: "0.35rem 0" }}>
+              About <strong>20 minutes, once a week, for 12 weeks.</strong> Then you stop. Really.
+            </li>
+            <li style={{ margin: "0.35rem 0" }}>
+              <strong>&quot;I don&apos;t know&quot; is a good answer.</strong> Write it down and move on.
+            </li>
+            <li style={{ margin: "0.35rem 0" }}>Nobody is grading this. There&apos;s no wrong way to do it.</li>
+          </ul>
+          <p style={{ marginBottom: 0, fontSize: "0.95rem", color: "rgba(28,25,21,0.78)" }}>
+            When you finish, your church will have one written place that says what you have, where it is, who takes
+            care of it, and who to call. That&apos;s the whole point.
+          </p>
+        </section>
+
         <ul style={{ margin: "1rem 0 1.5rem 1.1rem" }}>
           <li style={{ margin: "0.4rem 0" }}>Write it down only — you don’t fix anything in this book</li>
           <li style={{ margin: "0.4rem 0" }}>About 20 minutes a week for 12 weeks</li>
@@ -134,7 +213,7 @@ export default function ChurchJournalPage() {
           </a>
         </div>
 
-                <div
+        <div
           style={{
             background: "#e4eef5",
             borderRadius: 10,
