@@ -7,14 +7,6 @@ export const metadata: Metadata = {
     "Get church tech out of your head — from scattered notes to one written place. $7 digital pilot.",
 };
 
-const btnBase = {
-  display: "block",
-  textAlign: "center" as const,
-  textDecoration: "none",
-  fontWeight: 700,
-  padding: "0.95rem 1rem",
-  borderRadius: 10,
-};
 
 export default function ChurchJournalPage() {
   return (
@@ -186,30 +178,143 @@ export default function ChurchJournalPage() {
           </p>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem", margin: "0 0 1.5rem" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "stretch",
+            gap: "0.75rem",
+            margin: "0 0 1.5rem",
+            flexWrap: "wrap",
+          }}
+        >
           <a
             href="https://www.paypal.com/paypalme/adamraymer826/7"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ ...btnBase, background: "#1c1915", color: "#f3efe6" }}
+            aria-label="Pay $7 with PayPal"
+            title="PayPal"
+            style={{
+              flex: "1 1 0",
+              minWidth: 96,
+              maxWidth: 140,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "0.35rem",
+              textDecoration: "none",
+              padding: "0.75rem 0.5rem",
+              borderRadius: 12,
+              background: "#fff",
+              border: "1px solid #d9d2c3",
+              color: "#1c1915",
+            }}
           >
-            Pay $7 with PayPal
+            <span
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 10,
+                background: "#003087",
+                color: "#fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: 800,
+                fontSize: "1.15rem",
+                letterSpacing: "-0.02em",
+                fontFamily: "system-ui, sans-serif",
+              }}
+            >
+              P
+            </span>
+            <span style={{ fontSize: "0.78rem", fontWeight: 700 }}>PayPal</span>
           </a>
           <a
             href="https://venmo.com/u/adam-raymer-brown?txn=pay&amount=7&note=12-Week%20Tech%20Journal"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ ...btnBase, border: "1.5px solid #008CFF", color: "#008CFF", background: "#fff" }}
+            aria-label="Pay $7 with Venmo"
+            title="Venmo"
+            style={{
+              flex: "1 1 0",
+              minWidth: 96,
+              maxWidth: 140,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "0.35rem",
+              textDecoration: "none",
+              padding: "0.75rem 0.5rem",
+              borderRadius: 12,
+              background: "#fff",
+              border: "1px solid #d9d2c3",
+              color: "#1c1915",
+            }}
           >
-            Pay $7 with Venmo · @adam-raymer-brown
+            <span
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 10,
+                background: "#008CFF",
+                color: "#fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: 800,
+                fontSize: "1.15rem",
+                fontFamily: "system-ui, sans-serif",
+              }}
+            >
+              V
+            </span>
+            <span style={{ fontSize: "0.78rem", fontWeight: 700 }}>Venmo</span>
           </a>
           <a
             href="https://x.com/theraymerbrown"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ ...btnBase, border: "1.5px solid #2f6f9f", color: "#2f6f9f", background: "#fff" }}
+            aria-label="Pay $7 with X Money to @theraymerbrown"
+            title="X Money"
+            style={{
+              flex: "1 1 0",
+              minWidth: 96,
+              maxWidth: 140,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "0.35rem",
+              textDecoration: "none",
+              padding: "0.75rem 0.5rem",
+              borderRadius: 12,
+              background: "#fff",
+              border: "1px solid #d9d2c3",
+              color: "#1c1915",
+            }}
           >
-            Pay $7 with X Money · @theraymerbrown
+            <span
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 10,
+                background: "#000",
+                color: "#fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: 800,
+                fontSize: "1.2rem",
+                fontFamily: "system-ui, sans-serif",
+              }}
+            >
+              𝕏
+            </span>
+            <span style={{ fontSize: "0.78rem", fontWeight: 700 }}>X Money</span>
           </a>
         </div>
 
