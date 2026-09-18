@@ -1,10 +1,19 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "The 12-Week Tech Journal — $7 Pilot | Raytech Services",
   description:
     "Get church tech out of your head — from scattered notes to one written place. $7 digital pilot.",
+};
+
+const btnBase = {
+  display: "block",
+  textAlign: "center",
+  textDecoration: "none",
+  fontWeight: 700,
+  padding: "0.95rem 1rem",
+  borderRadius: 10,
 };
 
 export default function ChurchJournalPage() {
@@ -74,33 +83,36 @@ export default function ChurchJournalPage() {
           <li style={{ margin: "0.4rem 0" }}>“I don’t know” is a good answer</li>
           <li style={{ margin: "0.4rem 0" }}>Pilot thank-you: free print when the final edition ships</li>
         </ul>
-        <p style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "2rem", fontWeight: 700, margin: "1.25rem 0 0.35rem" }}>
+
+        <p style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "2rem", fontWeight: 700, margin: "1.25rem 0 1.5rem" }}>
           $7{" "}
           <span style={{ fontSize: "1rem", fontWeight: 500, color: "rgba(28,25,21,0.62)", fontFamily: '"Source Sans 3", sans-serif' }}>
             digital download
           </span>
         </p>
-        <p style={{ fontSize: "0.92rem", color: "rgba(28,25,21,0.62)", marginBottom: "1.5rem" }}>
-          Pay $7 (PayPal, Venmo, or X Money → <strong>@theraymerbrown</strong>). Put your{" "}
-          <strong>church name + email</strong> in the payment note. Then open{" "}
-          <strong>raytech.co/church/thanks</strong> for your download.{" "}
-          <em>X Money: X app → Send → @theraymerbrown → $7.</em>
-        </p>
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem", margin: "1.25rem 0" }}>
+
+        <div
+          style={{
+            background: "#e8e2d4",
+            borderRadius: 10,
+            padding: "1.15rem 1.25rem",
+            marginBottom: "1.25rem",
+            borderLeft: "3px solid #b56a4a",
+          }}
+        >
+          <p style={{ fontWeight: 700, marginBottom: "0.45rem" }}>Step 1 — Pay $7</p>
+          <p style={{ fontSize: "0.92rem", color: "rgba(28,25,21,0.72)", marginBottom: 0 }}>
+            Use one of the links below. In the payment note, put your <strong>church name + email</strong>.
+            X Money: open the X app → Send → <strong>@theraymerbrown</strong> → $7.
+          </p>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem", margin: "0 0 1.5rem" }}>
           <a
             href="https://www.paypal.com/paypalme/adamraymer826/7"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              display: "block",
-              textAlign: "center",
-              textDecoration: "none",
-              fontWeight: 700,
-              padding: "0.95rem 1rem",
-              borderRadius: 10,
-              background: "#1c1915",
-              color: "#f3efe6",
-            }}
+            style={{ ...btnBase, background: "#1c1915", color: "#f3efe6" }}
           >
             Pay $7 with PayPal
           </a>
@@ -108,17 +120,7 @@ export default function ChurchJournalPage() {
             href="https://venmo.com/u/adam-raymer-brown?txn=pay&amount=7&note=12-Week%20Tech%20Journal"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              display: "block",
-              textAlign: "center",
-              textDecoration: "none",
-              fontWeight: 700,
-              padding: "0.95rem 1rem",
-              borderRadius: 10,
-              border: "1.5px solid #008CFF",
-              color: "#008CFF",
-              background: "#fff",
-            }}
+            style={{ ...btnBase, border: "1.5px solid #008CFF", color: "#008CFF", background: "#fff" }}
           >
             Pay $7 with Venmo · @adam-raymer-brown
           </a>
@@ -126,39 +128,37 @@ export default function ChurchJournalPage() {
             href="https://x.com/theraymerbrown"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              display: "block",
-              textAlign: "center",
-              textDecoration: "none",
-              fontWeight: 700,
-              padding: "0.95rem 1rem",
-              borderRadius: 10,
-              border: "1.5px solid #2f6f9f",
-              color: "#2f6f9f",
-              background: "#fff",
-            }}
+            style={{ ...btnBase, border: "1.5px solid #2f6f9f", color: "#2f6f9f", background: "#fff" }}
           >
             Pay $7 with X Money · @theraymerbrown
           </a>
         </div>
+
         <div
           style={{
-            background: "#e8e2d4",
+            background: "#e4eef5",
             borderRadius: 10,
-            padding: "1.1rem 1.2rem",
-            marginTop: "1.5rem",
-            fontSize: "0.95rem",
-            borderLeft: "3px solid #b56a4a",
+            padding: "1.15rem 1.25rem",
+            borderLeft: "3px solid #2f6f9f",
           }}
         >
-          <strong style={{ display: "block", marginBottom: "0.35rem" }}>After you pay</strong>
-          Open{" "}
-          <Link href="/church/thanks" style={{ color: "#2f6f9f", fontWeight: 700 }}>
-            raytech.co/church/thanks
-          </Link>{" "}
-          to download your journal PDF.
+          <p style={{ fontWeight: 700, marginBottom: "0.45rem" }}>Step 2 — After you pay, get your journal</p>
+          <p style={{ fontSize: "0.95rem", marginBottom: "0.85rem", color: "rgba(28,25,21,0.78)" }}>
+            Come back here and open the download page:
+          </p>
+          <Link
+            href="/church/thanks"
+            style={{
+              ...btnBase,
+              background: "#2f6f9f",
+              color: "#f3efe6",
+            }}
+          >
+            Go to download → raytech.co/church/thanks
+          </Link>
         </div>
-        <p style={{ marginTop: "1.35rem", fontSize: "0.92rem", color: "rgba(28,25,21,0.62)" }}>
+
+        <p style={{ marginTop: "1.5rem", fontSize: "0.92rem", color: "rgba(28,25,21,0.62)" }}>
           Gift for a church office? Pay $7 and put their email in the note, or just tell Adam and he’ll send it.
         </p>
         <div
