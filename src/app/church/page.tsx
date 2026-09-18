@@ -134,7 +134,7 @@ export default function ChurchJournalPage() {
           </a>
         </div>
 
-        <div
+                <div
           style={{
             background: "#e4eef5",
             borderRadius: 10,
@@ -142,20 +142,14 @@ export default function ChurchJournalPage() {
             borderLeft: "3px solid #2f6f9f",
           }}
         >
-          <p style={{ fontWeight: 700, marginBottom: "0.45rem" }}>Step 2 — After you pay, get your journal</p>
-          <p style={{ fontSize: "0.95rem", marginBottom: "0.85rem", color: "rgba(28,25,21,0.78)" }}>
-            Come back here and open the download page:
+          <p style={{ fontWeight: 700, marginBottom: "0.45rem" }}>Step 2</p>
+          <p style={{ fontSize: "1.02rem", marginBottom: 0, color: "rgba(28,25,21,0.85)" }}>
+            After payment is sent,{" "}
+            <Link href="/church/thanks" style={{ color: "#2f6f9f", fontWeight: 700 }}>
+              click here
+            </Link>
+            .
           </p>
-          <Link
-            href="/church/thanks"
-            style={{
-              ...btnBase,
-              background: "#2f6f9f",
-              color: "#f3efe6",
-            }}
-          >
-            Go to download → raytech.co/church/thanks
-          </Link>
         </div>
 
         <p style={{ marginTop: "1.5rem", fontSize: "0.92rem", color: "rgba(28,25,21,0.62)" }}>
