@@ -249,8 +249,6 @@ export default function ChurchJournalPage() {
           </p>
         </div>
 
-        <ConsultSlab />
-
         <h2 style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.35rem", marginBottom: "0.85rem", fontWeight: 700 }}>
           What&apos;s inside
         </h2>
